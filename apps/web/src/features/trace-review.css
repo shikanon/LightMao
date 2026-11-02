@@ -1,0 +1,108 @@
+.trace-review {
+  margin: 14px 0 18px;
+}
+.trace-review-checks {
+  display: grid;
+  gap: 6px;
+}
+.trace-review-check {
+  border: 1px solid var(--line, #e9e7ef);
+  border-radius: 10px;
+  background: var(--panel, #fff);
+  padding: 10px 12px;
+}
+.trace-review-check > summary {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  cursor: pointer;
+  list-style: none;
+  font-size: 12px;
+}
+.trace-review-check > summary::before {
+  content: '›';
+  color: var(--muted);
+}
+.trace-review-check[open] > summary::before {
+  transform: rotate(90deg);
+}
+.trace-review-check summary strong {
+  flex: 1;
+}
+.trace-review-check summary span {
+  font-size: 11px;
+  white-space: nowrap;
+  color: #777582;
+}
+.trace-review-check.attention summary span {
+  color: #b4482d;
+}
+.trace-review-check.guarded summary span {
+  color: #987027;
+}
+.trace-review-check.clear summary span {
+  color: #3f8270;
+}
+.trace-review-finding {
+  border-top: 1px solid #eeeaf4;
+  padding-top: 8px;
+  margin-top: 8px;
+  font-size: 12px;
+}
+.trace-review-finding p {
+  margin: 0 0 5px;
+}
+.trace-review-finding small {
+  display: block;
+  color: #777582;
+  overflow-wrap: anywhere;
+}
+.trace-review-sources {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 14px;
+}
+.trace-review-finding button {
+  font-size: 11px;
+  margin-top: 7px;
+}
+.trace-review-snapshot {
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.6;
+}
+.trace-review-snapshot span {
+  display: block;
+  color: #987027;
+}
+.trace-review-limits {
+  font-size: 11px;
+  color: #777582;
+  margin: 10px 0;
+}
+.trace-review-limits summary {
+  cursor: pointer;
+}
+.trace-review-limits p {
+  line-height: 1.6;
+}
+.trace-location {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 6px;
+  font-size: 12px;
+}
+.trace-location button {
+  font-size: 11px;
+}
+.trace-event.located {
+  border-radius: 6px;
+  box-shadow: 0 0 0 4px #eeeafa;
+  background: #f6f3ff;
+}
+.trace-event.located::before {
+  background: #8974d6;
+}

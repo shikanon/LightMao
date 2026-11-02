@@ -1,0 +1,11 @@
+packages:
+  - .
+allowBuilds:
+  '@google/genai': false
+  esbuild: true
+  protobufjs: false
+  electron: true
+minimumReleaseAgeExclude:
+  - electron@45.2.1
+patchedDependencies:
+  '@anthropic-ai/sandbox-runtime@0.0.81': patches/@anthropic-ai__sandbox-runtime@0.0.81.patch

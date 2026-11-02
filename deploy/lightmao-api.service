@@ -1,0 +1,35 @@
+[Unit]
+Description=LightMao API and administration
+After=network-online.target
+Wants=network-online.target
+StartLimitIntervalSec=60
+StartLimitBurst=3
+
+[Service]
+Type=simple
+User=lightmao
+Group=lightmao
+StateDirectory=lightmao
+StateDirectoryMode=0700
+WorkingDirectory=/var/lib/lightmao
+Environment=NODE_ENV=production
+EnvironmentFile=/etc/lightmao/server.env
+ExecStart=/usr/bin/node /opt/lightmao/current/dist/api/index.js
+Restart=on-failure
+RestartSec=5
+KillSignal=SIGTERM
+TimeoutStopSec=30
+UMask=0077
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/var/lib/lightmao
+RestrictAddressFamilies=AF_UNIX AF_INET AF_INET6
+TasksMax=128
+MemoryMax=1G
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=multi-user.target

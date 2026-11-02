@@ -1,0 +1,16 @@
+; Open this folder with Godot 4 standard edition.
+config_version=5
+
+[application]
+config/name="LightMao · 星光小径"
+run/main_scene="res://main.tscn"
+config/features=PackedStringArray("4.0", "GL Compatibility")
+
+[display]
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+
+[rendering]
+renderer/rendering_method="gl_compatibility"
+environment/defaults/default_clear_color=Color(0.035, 0.055, 0.09, 1)
